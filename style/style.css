@@ -1,0 +1,75 @@
+:root {
+    --creamy: #f7f5f1;
+    --white: #ffffff; 
+    --greenish-theme : #123b38;
+}
+body{
+    background-color: var(--creamy);
+}
+.nav-position{
+    background-color: var(--creamy);
+    
+    padding: 0px 105px 10px 105px;  /* top:     */
+                            /* right:    */
+                            /* bottom:  */
+                            /* left:    */
+}
+.box-mx{
+    background-color:azure;
+    height: 650px;
+    width:inherit;
+}
+.box-my{
+    padding-left: 10%;
+    padding-top: 5%;
+    background-color:var(--creamy);
+    height: 650px;
+    width:inherit;
+}
+.box-im{
+   width: 50%;
+   float: right;
+}
+.box-tx{
+    /* margin-top: 0%;
+    margin-left: 0%; */
+   width: 50%;
+   float: left;
+}
+.text-oagys{
+   
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--greenish-theme);
+}
+.text-sdme{
+    margin-top: 10px;
+    /* margin-left: 6%; */
+    font-size: 20px;
+    
+    color: var(--greenish-theme);
+}
+.btn-green-main{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: inherit;
+    appearance: none !important;
+    border-radius: 4px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-image: initial;
+    background: rgb(80, 198, 170);
+    transition: all 0.2s ease 0s;
+}
+.img-girl-google{
+    width: 75%;
+    height: auto;
+}
