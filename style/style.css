@@ -1,9 +1,10 @@
 :root {
     --creamy: #f7f5f1;
+    --creamy-dark: rgba(0,0,0,0.025);
     --white: #ffffff; 
     --greenish-theme : #123b38;
 }
-body{
+.body{
     background-color: var(--creamy);
 }
 .nav-position{
@@ -16,14 +17,14 @@ body{
 }
 .box-mx{
     background-color:azure;
-    height: 650px;
+    height: 620px;
     width:inherit;
 }
 .box-my{
     padding-left: 10%;
     padding-top: 5%;
-    background-color:var(--creamy);
-    height: 650px;
+    /* background-color:var(--creamy); */
+    height: 560px;
     width:inherit;
 }
 .box-im{
@@ -73,3 +74,23 @@ body{
     width: 75%;
     height: auto;
 }
+.box-m2{
+    padding-left: 10%;
+    padding-top: 20px;
+    background-color:var(--white);
+    height: 650px;
+    width:inherit;
+}
+header{
+    padding-top: 30px;
+}
+.box-btm-20{
+    background: var(--creamy-dark);
+    /* margin-top: 35%; */
+    height: 60px;
+    width: 100%;
+}
+ .box-btm-20 p{
+    padding: 17px 0% 0% 10%;
+    
+ }
