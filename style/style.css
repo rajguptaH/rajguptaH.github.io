@@ -43,10 +43,11 @@
     width:inherit;
 }
 .box{
-    padding-left: 10%;
-    padding-top: 5%;
+    padding:0.3% 10% 0.5% 10%; /*top right bottom left*/
+    /* padding-left: 10%;
+    padding-top: 5%; */
     position: relative;
-    height: 700px;
+    height: inherit;
     width:inherit;
 }
 .right-half{
@@ -63,10 +64,11 @@
     font-weight: bold;
     color: var(--greenish-theme);
 }
-.text-sdme{
+.font-main{
     margin-top: 10px;
     /* margin-left: 6%; */
-    font-size: 2vw;
+    font-size: 3.5vw;
+    font-weight: 500;
     
     color: var(--greenish-theme);
 }
