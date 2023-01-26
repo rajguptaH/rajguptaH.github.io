@@ -28,7 +28,15 @@
     <title>Bug Developer</title>
   </head>
   <body class="body">
+    <div id="overlay"></div>
     <header>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
       <nav class="navbar navbar-expand-lg navbar-light nav-position">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -50,9 +58,8 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <button>sff</button>
           <div
-            class="collapse navbar-collapse d-flex"
+            class="collapse navbar-collapse "
             id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -96,14 +103,14 @@
         </div>
       </nav>
     </header>
-    <div class="box bg-orange">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-xl-6">
-          <p class="font-main">Hi, I'm, <br />Raj Narayan Gupta<br /></p>
-          <p class="text-sdme">
-            With our team of Shopify design & marketing experts
+    <div class=" bg-orange">
+      <div class="row box">
+        <div class="col-lg-6 col-md-6 col-xl-6 mar-t-5" >
+          <p class="font-main">Hi, I'm, Raj Narayan Gupta</p>
+          <p class="sub-head">
+            i like to making fun interactive things with code i also talk & write about those things
           </p>
-
+           <button onclick="openNav()">&Xi;</button>
           <h1>
             <p
               href=""
@@ -251,6 +258,7 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
+   
   </body>
 </html>
 <script>
@@ -306,11 +314,26 @@
         new TxtType(elements[i], JSON.parse(toRotate), period);
       }
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML =
-      ".typewrite > .wrap { font-size:4vw; border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
+   
   };
 </script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("overlay").style.display = "none";
+    
+  }
+//   $(document).click(function (event) {
+//     var clickover = $(event.target);
+//     var $navbar = $(".navbar-collapse");               
+//     var _opened = $navbar.hasClass("in");
+//     if (_opened === true && !clickover.hasClass("navbar-toggle")) {      
+//         $navbar.collapse('hide');
+//     }
+// });
+  </script>
