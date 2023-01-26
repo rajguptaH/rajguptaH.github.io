@@ -148,3 +148,28 @@ header{
     margin: 0;
     transition: background 0.2s linear;
   }
+  /* Scroable Css  */
+ 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(111, 36, 252);  
+  border-radius: 20px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(45deg, rgb(252, 127, 1) 20%, rgb(252, 178, 19) 20%, rgb(252, 178, 19) 40%, rgb(252, 127, 1) 40%, rgb(252, 127, 1) 60%, rgb(252, 178, 19) 60%, rgb(252, 178, 19) 80%, rgb(252, 127, 1) 80%);
+  
+
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:linear-gradient(45deg, rgb(252, 97, 1) 20%, rgb(0, 197, 241) 20%, rgb(0, 197, 241) 40%, rgb(252, 97, 1) 40%, rgb(252, 97, 1) 60%, rgb(0, 197, 241) 60%, rgb(0, 197, 241) 80%, rgb(252, 97, 1) 80%); 
+}
+/* End */
