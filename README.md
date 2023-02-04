@@ -1,2 +1,2 @@
-## [GoToWebsite](rajguptah.github.com)
+## [GoToWebsite](rajguptah.github.io)
 Give A Star 💛😇
