@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="/style/styel2.css" />
-    <script src="script/script.js"></script>
-    <script src="script/util.js"></script>
+    
+    
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
@@ -17,7 +17,9 @@
     <link
       rel="stylesheet"
       href="style/font-awesome-4.7.0/css/font-awesome.min.css" />
-   
+      <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+     <script  src="script/script.js"></script>
+    <script src="script/util.js"></script> 
     <title>Bug Developer</title>
   </head>
   <body class="body box">
@@ -88,10 +90,10 @@
               </ul>
             </nav>
             <label class="switch js-night-toggle"
-              ><input
+              ><input 
                 class="switch__checkbox js-night-checkbox"
                 type="checkbox" />
-              <span class="switch__toggle"></span> Toggle dark mode</label
+              <span id="themeSwitch" class="switch__toggle"></span> Toggle dark mode</label
             >
           </div>
         </div>
@@ -125,7 +127,7 @@
     </div>
 
     <!--  -->
-    
+<!--     
     <div class="bg-orange">
       <div class="row ">
         <div class="col-lg-6 col-md-6 col-xl-6 mar-t-5">
@@ -153,10 +155,11 @@
           <img class="img-girl-google" src="/img/19362653.png" />
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>
 <script>
+  $(document).ready(SetLightTheme());
   var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
