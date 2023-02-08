@@ -3,6 +3,7 @@
 :root {
     --creamy: #f7f5f1;
     --creamy-dark: rgba(0,0,0,0.025);
+    --sdf : #000000;
     --white: #ffffff; 
     --greenish-theme : #123b38;
     --orange : #e6b72b;
@@ -37,7 +38,7 @@
 }
 .box{
  /* padding:0.3% 10% 0.5% 10%; top right bottom left*/
- background-color: var(--raj-light);
+ background-color: var(--white);
   position: relative;
   z-index: 1;
   min-height: 100vh;
