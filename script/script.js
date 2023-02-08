@@ -7,17 +7,19 @@ let SetDarkTheme = ()=>{
 }
 // let swtchBtn = $("#themeSwitch");
 // swtchBtn.click(ChangeTheme());
-$('.js-night-toggle').click(function(){
+function funtus(){
     var r = document.querySelector(':root');
     let currentTheme = localStorage.getItem("theme");
     if(currentTheme == "LightTheme"){
     r.style.setProperty('--color-mint', 'hsl(316, 30%, 36%)');
+    r.style.setProperty('--white', 'hsl(274, 4%, 16%)');
     SetDarkTheme();
     }else{
         r.style.setProperty('--color-mint', '#6fdcbf');
+        r.style.setProperty('--white', '#ffff');
         SetLightTheme();
     }
-});
+}
 // $("#themeSwitch").change(ChangeTheme(this));
 //   function myFunction() {
 //     var x = localStorage.getItem("mytime");
