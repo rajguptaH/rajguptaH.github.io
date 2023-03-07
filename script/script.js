@@ -8,6 +8,9 @@ let SetDarkTheme = ()=>{
 // let swtchBtn = $("#themeSwitch");
 // swtchBtn.click(ChangeTheme());
 function funtus(){
+    if(localStorage.theme == null){
+        localStorage.theme = "LightTheme";
+    }
     var r = document.querySelector(':root');
     let currentTheme = localStorage.getItem("theme");
     if(currentTheme == "LightTheme"){
