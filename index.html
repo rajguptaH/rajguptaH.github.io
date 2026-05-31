@@ -1,217 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="/style/styel2.css" />
-    
-    
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-      crossorigin="anonymous" />
-    <link
-      rel="stylesheet"
-      href="style/font-awesome-4.7.0/css/font-awesome.min.css" />
-      <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-     <script  src="script/script.js"></script>
-    <script src="script/util.js"></script> 
-    <title>Bug Developer</title>
-  </head>
-  <body class="body box">
-      <header
-        role="banner"
-        class=" Site-head  pad-top-500 pad-bottom-500 ">
-        <div class=" wrapper wrapper-lg ">
-          
-          <div
-            class=" Site-head__inner box-flex space-between align-center ">
-            <a
-              href="/"
-              class=" Site-head__site-name  leading-tight "
-              aria-current="page"
-              ><span class="visually-hidden">Raj Narayan</span>
-             </a>
-            <nav class="nav">
-              <ul style="    list-style: none;"
-                class=" nav__list box-flex align-center md:space-before ">
-                <li class="nav__item">
-                  <a href="/writing/" class="nav__item-hover" data-id="writing"
-                    ><span class="nav__item-hover-inner" data-hover="Home"
-                      >Home</span
-                    ></a
-                  >
-                </li>
-                <li class="nav__item">
-                  <a
-                    href="https://Instagram.com/raj__rr/"
-                    class="nav__item-hover"
-                    data-id="speaking"
-                    ><span class="nav__item-hover-inner" data-hover="Instagram"
-                      >Instagram</span
-                    ></a
-                  >
-                </li>
-                <li class="nav__item">
-                  <a
-                    href="/"
-                    class="nav__item-hover"
-                    data-id="speaking"
-                    ><span class="nav__item-hover-inner" data-hover="Buy me A Coffee"
-                      >Buy me A Coffee</span
-                    ></a
-                  >
-                </li>
-                <li class="nav__item">
-                  <a
-                    href="https://github.com/rajguptah/"
-                    class="nav__item-hover"
-                    data-id="workshop"
-                    ><span class="nav__item-hover-inner" data-hover="Github"
-                      >Github</span
-                    ></a
-                  >
-                </li>
-                <li class="nav__item">
-                  <a
-                    href="https://Instagram.com/bug__developer"
-                    rel="external"
-                    class="nav__item-hover"
-                    data-id="playing"
-                    ><span class="nav__item-hover-inner" data-hover="Contact Us"
-                      >Contact Us</span
-                    ></a
-                  >
-                </li>
-              </ul>
-            </nav>
-            <label class="switch js-night-toggle"
-              ><input onclick="funtus()"
-                class="switch__checkbox js-night-checkbox"
-                type="checkbox" />
-              <span id="themeSwitch" class="switch__toggle"></span> Toggle dark mode</label
-            >
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Raj Narayan Gupta portfolio: .NET, WPF, WinForms, microservices, DevOps, MERN, IoT, kiosks, and Algos.Insights." />
+  <title>Raj Narayan Gupta | Full Stack .NET, Cloud & Product Engineer</title>
+  <meta name="author" content="Raj Narayan Gupta" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Raj Narayan Gupta, rajguptaH, .NET developer, ASP.NET Core, WPF, WinForms, microservices, DevOps, AWS, Azure, React, MERN, Algos.Insights" />
+  <link rel="canonical" href="https://rajguptah.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Raj Narayan Gupta | Full Stack .NET, Cloud & Product Engineer" />
+  <meta property="og:description" content="Portfolio of Raj Narayan Gupta: .NET, desktop apps, cloud, DevOps, MERN, IoT, kiosks, microservices, and Algos.Insights." />
+  <meta property="og:url" content="https://rajguptah.github.io/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/42234411?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Raj Narayan Gupta | Full Stack .NET, Cloud & Product Engineer" />
+  <meta name="twitter:description" content="Full stack .NET, cloud, desktop, DevOps, MERN, IoT, kiosks, and product engineering portfolio." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/42234411?v=4" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Raj Narayan Gupta",
+      "alternateName": "rajguptaH",
+      "url": "https://rajguptah.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/42234411?v=4",
+      "jobTitle": "Full Stack .NET, Cloud and Product Engineer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Patna",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://github.com/rajguptaH",
+        "https://x.com/raj__rr",
+        "https://www.instagram.com/raj__rr/",
+        "https://www.nuget.org/packages/Algos.Insights"
+      ],
+      "knowsAbout": [
+        "ASP.NET Core",
+        "WPF",
+        "WinForms",
+        "Microservices",
+        "AWS",
+        "Azure",
+        "React",
+        "MERN",
+        "DevOps",
+        "IoT",
+        "Payment integrations"
+      ]
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#111827",
+            mint: "#14b8a6",
+            coral: "#f97316",
+            grape: "#6d28d9",
+            night: "#0f172a"
+          },
+          boxShadow: {
+            glow: "0 26px 90px rgba(20, 184, 166, 0.22)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 6%, rgba(20, 184, 166, .16), transparent 28rem),
+        radial-gradient(circle at 90% 2%, rgba(249, 115, 22, .13), transparent 30rem),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 48%, #ffffff 100%);
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(15, 23, 42, .055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, .055) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, black, transparent 70%);
+    }
+  </style>
+</head>
+<body class="text-ink antialiased">
+  <div class="grid-bg pointer-events-none fixed inset-0 -z-10"></div>
+
+  <header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="https://avatars.githubusercontent.com/u/42234411?v=4" alt="Raj Narayan Gupta" class="h-10 w-10 rounded-full border border-slate-200 object-cover" />
+        <span class="text-sm font-black">Raj Narayan Gupta</span>
+      </a>
+      <div class="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
+        <a href="work.html" class="hover:text-slate-950">Work</a>
+        <a href="algos-insights.html" class="hover:text-slate-950">Algos.Insights</a>
+        <a href="contact.html" class="hover:text-slate-950">Contact</a>
+      </div>
+      <a href="https://wa.me/919308337022?text=Hi%20Raj%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-black text-white shadow-lg shadow-green-500/20 transition hover:-translate-y-0.5">
+        <svg aria-hidden="true" viewBox="0 0 32 32" class="h-5 w-5 fill-current"><path d="M16.04 3C9.3 3 3.83 8.44 3.83 15.14c0 2.32.66 4.49 1.8 6.34L4 29l7.7-1.6a12.2 12.2 0 0 0 4.34.78c6.74 0 12.21-5.44 12.21-12.14S22.78 3 16.04 3Zm0 22.98c-1.44 0-2.84-.28-4.14-.84l-.3-.13-4.55.94.97-4.42-.18-.32a10.72 10.72 0 0 1-1.63-5.68c0-5.49 4.49-9.96 10-9.96s10 4.47 10 9.96-4.49 9.96-10.17 9.96Zm5.8-7.45c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.52-.16-.73.16-.21.31-.84 1.04-1.03 1.25-.19.21-.38.23-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.6-1.9-1.8-2.22-.19-.31-.02-.48.14-.64.15-.15.32-.38.48-.57.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.73-1.74-1-2.39-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.13 3.05 1.29 3.26c.16.21 2.22 3.38 5.38 4.74.75.32 1.34.52 1.8.66.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+        Text me
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+      <div>
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-bold text-teal-700 shadow-sm">
+          <span class="h-2 w-2 rounded-full bg-mint"></span>
+          Full stack .NET, cloud, desktop, automation, and product systems
+        </div>
+        <h1 class="max-w-5xl text-5xl font-black leading-[.98] tracking-tight text-slate-950 sm:text-7xl">
+          I build real business software across web, desktop, cloud, devices, and operations.
+        </h1>
+        <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-600">
+          I am Raj Narayan Gupta, a developer with 5+ years of experience shipping systems with .NET, microservices, WPF, WinForms, React, MERN, MAUI, React Native, Python automation, RabbitMQ, BullMQ, SignalR, DevOps, and cloud infrastructure.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="work.html" class="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-black text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5">Explore my work</a>
+          <a href="algos-insights.html" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-0.5">Open package docs</a>
+        </div>
+        <dl class="mt-10 grid max-w-3xl grid-cols-3 gap-3">
+          <div class="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Public repos</dt>
+            <dd class="mt-1 text-3xl font-black">30</dd>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Experience</dt>
+            <dd class="mt-1 text-3xl font-black">5+ yrs</dd>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+            <dt class="text-xs font-bold uppercase tracking-wide text-slate-500">Latest pkg</dt>
+            <dd class="mt-1 text-3xl font-black">2.1.7</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -inset-5 -z-10 rounded-[2rem] bg-gradient-to-br from-teal-200/80 via-white to-orange-200/70 blur-2xl"></div>
+        <div class="overflow-hidden rounded-[1.75rem] border border-white bg-white shadow-glow">
+          <div class="bg-slate-950 p-5 text-white">
+            <div class="flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-red-400"></span>
+              <span class="h-3 w-3 rounded-full bg-yellow-300"></span>
+              <span class="h-3 w-3 rounded-full bg-green-400"></span>
+            </div>
+            <pre class="mt-7 overflow-hidden text-sm leading-7 text-teal-100"><code>Bus OBU live tracking over TCP/IP
+ATM kiosk device orchestration
+RFID inventory with offline recovery
+Microservices + DevOps + cloud delivery</code></pre>
+          </div>
+          <div class="grid gap-4 p-5">
+            <div class="rounded-2xl border border-slate-200 p-5">
+              <p class="text-xs font-black uppercase tracking-[.22em] text-coral">Systems mindset</p>
+              <h2 class="mt-2 text-3xl font-black">From hardware devices to high-scale web apps</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-600">I work close to the business problem: payment integrations, CRM/ERP workflows, live tracking, kiosks, dashboards, migrations, Linux/VPS management, Microsoft 365, and production performance tuning.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl bg-slate-100 p-4">
+                <p class="text-xs font-bold text-slate-500">Desktop</p>
+                <p class="mt-1 font-black">WPF + WinForms</p>
+              </div>
+              <div class="rounded-2xl bg-slate-100 p-4">
+                <p class="text-xs font-bold text-slate-500">Cloud</p>
+                <p class="mt-1 font-black">AWS + Azure</p>
+              </div>
+            </div>
           </div>
         </div>
-    </header>
-    <div class="bg-orange">
-      <div class="row ">
-        <div class="col">
-          <img class="img-girl-google" src="/img/19362653.png" />
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="text-sm font-black uppercase tracking-[.22em] text-teal-700">Featured systems</p>
+            <h2 class="mt-3 text-4xl font-black tracking-tight text-slate-950">Business-heavy engineering, not just demo apps</h2>
+          </div>
+          <a href="work.html" class="w-fit rounded-full border border-slate-300 px-5 py-3 text-sm font-black transition hover:-translate-y-0.5 hover:bg-slate-50">View all work</a>
         </div>
-         <div class="col">
-          <p class="font-main">Hi, I'm, Raj Narayan Gupta</p>
-          <p class="sub-head">
-            i like to making fun interactive things with code i also talk &
-            write about those things
-          </p>
-         
-          <h1>
-            <p
-              href=""
-              class="typewrite"
-              data-period="2000"
-              data-type='[ "Software Developer.", "Love Music.", "Scroll Down For More.", "Thanks." ]'>
-              <span class="wrap"></span>
-            </p>
-          </h1>
-          <button class="btn-green-main">
-            <a href="/">Browse Our Services</a>
-          </button>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          <a href="work.html#bus-tracking" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-teal-300 hover:bg-white hover:shadow-xl">
+            <p class="text-sm font-black uppercase tracking-[.18em] text-teal-700">Live mobility</p>
+            <h3 class="mt-3 text-2xl font-black">Bus tracking system</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-600">OBU-based TCP/IP tracking, live map movement, fleet visibility, and video visualization for operations teams.</p>
+          </a>
+          <a href="work.html#atm-kiosk" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-orange-300 hover:bg-white hover:shadow-xl">
+            <p class="text-sm font-black uppercase tracking-[.18em] text-orange-700">Device software</p>
+            <h3 class="mt-3 text-2xl font-black">ATM kiosk system</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-600">Genmega bill acceptor, cash dispenser, receipt printer, card readers, camera recording, and secure workflows.</p>
+          </a>
+          <a href="work.html#rfid-inventory" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-violet-300 hover:bg-white hover:shadow-xl">
+            <p class="text-sm font-black uppercase tracking-[.18em] text-violet-700">Offline-first</p>
+            <h3 class="mt-3 text-2xl font-black">RFID inventory</h3>
+            <p class="mt-4 text-sm leading-6 text-slate-600">RFID-based inventory management with offline support, crash recovery, sync flows, and resilient desktop operations.</p>
+          </a>
         </div>
       </div>
+    </section>
+
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-black">.NET architecture</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Microservices, DI, design patterns, API design, performance, SignalR, RabbitMQ, and scalable backends.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-black">DevOps and cloud</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">AWS SES, ECS, ECR, ALB, EC2, S3, Route 53, VPC, bastion, RDS migrations, GitHub Actions, Jenkins, and Azure App Services.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-black">Frontend and apps</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">React, MERN stack, MAUI, React Native, WPF, WinForms, CRM, ERP, dashboards, and integration-heavy UI.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-black">Operations</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">Linux, VPS management, MinIO, Microsoft 365, automation, migrations, monitoring, and production support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[.22em] text-teal-700">Origin and interests</p>
+          <h2 class="mt-3 text-4xl font-black tracking-tight text-slate-950">Curiosity has always been my real classroom.</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            I love songs, science fiction, stories, history, computers, and the feeling of building something that did not exist yesterday.
+          </p>
+        </div>
+        <div class="grid gap-5">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <h3 class="text-2xl font-black">The kid who kept breaking things to understand them</h3>
+            <p class="mt-4 leading-8 text-slate-600">
+              A lot of my learning did not happen only through classrooms. While others followed the usual path, I gave most of my time to computers, explored operating systems, tested ideas, and slowly learned how software and devices work from the inside.
+            </p>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-xl font-black">Failed experiments became fuel</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">
+                Many early experiments did not work perfectly, but each one pushed me into a new question, a new tool, and a new direction.
+              </p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-xl font-black">Three childhood dreams</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-600">
+                Scientist, astronaut, or software engineer. Tech became the place where all three dreams could still live: discovery, imagination, and building useful systems.
+              </p>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-slate-950 p-6 text-white">
+            <p class="text-sm font-black uppercase tracking-[.2em] text-teal-300">Today</p>
+            <p class="mt-3 text-2xl font-black leading-snug">
+              I am fully dedicated to technology because it is what I love most. My hobby is creating innovative things, and when I build, I put in 100%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8">
+    <div class="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-5 text-sm font-semibold text-slate-500 sm:flex-row lg:px-8">
+      <p>Made with Love In India</p>
+      <p><a href="https://github.com/rajguptaH" class="hover:text-slate-950">GitHub</a> | <a href="https://x.com/raj__rr" class="hover:text-slate-950">X</a> | <a href="https://www.instagram.com/raj__rr/" class="hover:text-slate-950">Instagram</a> | <a href="contact.html" class="hover:text-slate-950">Contact</a></p>
     </div>
-
-    <!--  -->
-<!--     
-    <div class="bg-orange">
-      <div class="row ">
-        <div class="col-lg-6 col-md-6 col-xl-6 mar-t-5">
-          <p class="font-main">Hi, I'm, Raj Narayan Gupta</p>
-          <p class="sub-head">
-            i like to making fun interactive things with code i also talk &
-            write about those things
-          </p>
-          <button onclick="openNav()">&Xi;</button>
-          <h1>
-            <p
-              href=""
-              class="typewrite"
-              data-period="2000"
-              data-type='[ "Software Developer.", "Love Music.", "Scroll Down For More.", "Thanks." ]'>
-              <span class="wrap"></span>
-            </p>
-          </h1>
-          <button class="btn-green-main">
-            <a href="/">Browse Our Services</a>
-          </button>
-        </div>
-
-        <div class="col-lg-6 col-md-6 col-xl-6">
-          <img class="img-girl-google" src="/img/19362653.png" />
-        </div>
-      </div>
-    </div> -->
-  </body>
+  </footer>
+</body>
 </html>
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="665b9069-ef06-4415-9f08-e94eb01e0bda";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-<script>
-  //$(document).ready(SetLightTheme());
-  var TxtType = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = "";
-    this.tick();
-    this.isDeleting = false;
-  };
-
-  TxtType.prototype.tick = function () {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
-
-    var that = this;
-    var delta = 200 - Math.random() * 100;
-
-    if (this.isDeleting) {
-      delta /= 2;
-    }
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-    }
-
-    setTimeout(function () {
-      that.tick();
-    }, delta);
-  };
-
-  window.onload = function () {
-    var elements = document.getElementsByClassName("typewrite");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-type");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-    }
-  };
-</script>

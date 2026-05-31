@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Algos.Insights documentation: production-ready observability for ASP.NET Core applications." />
+  <title>Algos.Insights Docs | Raj Narayan Gupta</title>
+  <meta name="author" content="Raj Narayan Gupta" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Algos.Insights, ASP.NET Core observability, .NET logging, request logging, metrics, tracing, dashboard, Razor Pages, telemetry, Raj Narayan Gupta" />
+  <link rel="canonical" href="https://rajguptah.github.io/algos-insights.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Algos.Insights Docs | ASP.NET Core Observability" />
+  <meta property="og:description" content="Documentation for Algos.Insights: request logging, metrics, tracing, exceptions, dependencies, feature usage, exports, alerts, and secure Razor Pages dashboard." />
+  <meta property="og:url" content="https://rajguptah.github.io/algos-insights.html" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/42234411?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Algos.Insights Docs | ASP.NET Core Observability" />
+  <meta name="twitter:description" content="Production-ready observability package docs for ASP.NET Core apps and APIs." />
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/42234411?v=4" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "Algos.Insights",
+      "description": "Production-ready observability for ASP.NET Core applications with request logging, metrics, tracing, exceptions, dependencies, feature usage, exports, alerts, and a secure Razor Pages dashboard.",
+      "programmingLanguage": "C#",
+      "runtimePlatform": ".NET 6, .NET 7, .NET 8, .NET 9",
+      "license": "https://opensource.org/licenses/MIT",
+      "codeRepository": "https://github.com/rajguptaH/Algos.Insights",
+      "downloadUrl": "https://www.nuget.org/packages/Algos.Insights/2.1.7",
+      "author": {
+        "@type": "Person",
+        "name": "Raj Narayan Gupta",
+        "url": "https://github.com/rajguptaH",
+        "sameAs": [
+          "https://github.com/rajguptaH",
+          "https://x.com/raj__rr",
+          "https://www.instagram.com/raj__rr/"
+        ]
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mint: "#14b8a6",
+            coral: "#f97316",
+            night: "#0f172a"
+          },
+          boxShadow: {
+            glow: "0 24px 80px rgba(20, 184, 166, .18)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(20, 184, 166, .12), transparent 30rem),
+        radial-gradient(circle at 90% 4%, rgba(249, 115, 22, .10), transparent 28rem),
+        #f8fafc;
+    }
+    pre { white-space: pre; }
+    .docs-layout { grid-template-columns: minmax(0, 1fr); }
+    article > section { min-width: 0; max-width: 100%; }
+    pre, code { max-width: 100%; }
+    @media (min-width: 1024px) {
+      .docs-layout { grid-template-columns: 290px minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body class="text-slate-950 antialiased">
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/85 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="https://avatars.githubusercontent.com/u/42234411?v=4" alt="Raj Narayan Gupta" class="h-10 w-10 rounded-full border border-slate-200 object-cover" />
+        <span class="text-sm font-black">Raj Narayan Gupta</span>
+      </a>
+      <div class="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
+        <a href="index.html" class="hover:text-slate-950">Home</a>
+        <a href="work.html" class="hover:text-slate-950">Work</a>
+        <a href="contact.html" class="hover:text-slate-950">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://www.nuget.org/packages/Algos.Insights/2.1.7" class="hidden rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white sm:inline-flex">NuGet</a>
+        <a href="https://wa.me/919308337022?text=Hi%20Raj%2C%20I%20found%20your%20Algos.Insights%20docs%20and%20would%20like%20to%20connect." class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-black text-white shadow-lg shadow-green-500/20">
+          <svg aria-hidden="true" viewBox="0 0 32 32" class="h-5 w-5 fill-current"><path d="M16.04 3C9.3 3 3.83 8.44 3.83 15.14c0 2.32.66 4.49 1.8 6.34L4 29l7.7-1.6a12.2 12.2 0 0 0 4.34.78c6.74 0 12.21-5.44 12.21-12.14S22.78 3 16.04 3Zm0 22.98c-1.44 0-2.84-.28-4.14-.84l-.3-.13-4.55.94.97-4.42-.18-.32a10.72 10.72 0 0 1-1.63-5.68c0-5.49 4.49-9.96 10-9.96s10 4.47 10 9.96-4.49 9.96-10.17 9.96Zm5.8-7.45c-.32-.16-1.9-.94-2.2-1.04-.3-.11-.52-.16-.73.16-.21.31-.84 1.04-1.03 1.25-.19.21-.38.23-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.85-1.6-1.9-1.8-2.22-.19-.31-.02-.48.14-.64.15-.15.32-.38.48-.57.16-.18.21-.31.32-.52.11-.21.05-.39-.03-.55-.08-.16-.73-1.74-1-2.39-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.55.08-.84.39-.29.31-1.1 1.07-1.1 2.62s1.13 3.05 1.29 3.26c.16.21 2.22 3.38 5.38 4.74.75.32 1.34.52 1.8.66.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+          Text me
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="border-b border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[1fr_.75fr] lg:px-8">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[.22em] text-teal-700">Algos.Insights documentation</p>
+          <h1 class="mt-4 max-w-4xl text-5xl font-black tracking-tight sm:text-7xl">Production-ready observability for ASP.NET Core.</h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            Algos.Insights captures requests, logs, exceptions, metrics, traces, dependency calls, and feature or module usage, then presents them inside a secure built-in Razor Pages dashboard.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="rounded-full bg-teal-50 px-4 py-2 text-sm font-black text-teal-800">NuGet: Algos.Insights</span>
+            <span class="rounded-full bg-orange-50 px-4 py-2 text-sm font-black text-orange-800">.NET 6, 7, 8, 9</span>
+            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-black text-slate-800">ASP.NET Core apps and APIs</span>
+            <span class="rounded-full bg-slate-100 px-4 py-2 text-sm font-black text-slate-800">MIT</span>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-slate-950 p-6 text-white shadow-glow">
+          <p class="text-xs font-black uppercase tracking-[.2em] text-teal-300">Package information</p>
+          <dl class="mt-5 grid gap-4 text-sm">
+            <div class="rounded-2xl bg-white/10 p-4"><dt class="text-slate-400">Package ID</dt><dd class="mt-1 font-black">Algos.Insights</dd></div>
+            <div class="rounded-2xl bg-white/10 p-4"><dt class="text-slate-400">Primary use case</dt><dd class="mt-1 font-black">ASP.NET Core web apps and APIs</dd></div>
+            <div class="rounded-2xl bg-white/10 p-4"><dt class="text-slate-400">Targets</dt><dd class="mt-1 font-black">.NET 6, .NET 7, .NET 8, .NET 9</dd></div>
+            <div class="rounded-2xl bg-white/10 p-4"><dt class="text-slate-400">Dashboard route</dt><dd class="mt-1 font-black">/myinsights</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-layout mx-auto grid max-w-7xl gap-8 px-5 py-12 lg:px-8">
+      <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
+        <p class="text-xs font-black uppercase tracking-[.2em] text-slate-500">Contents</p>
+        <nav class="mt-4 grid gap-1 text-sm font-bold text-slate-600">
+          <a href="#highlights" class="rounded-xl px-4 py-2 hover:bg-slate-100">Highlights</a>
+          <a href="#install" class="rounded-xl px-4 py-2 hover:bg-slate-100">Installation</a>
+          <a href="#quick-start" class="rounded-xl px-4 py-2 hover:bg-slate-100">Quick start</a>
+          <a href="#dashboard" class="rounded-xl px-4 py-2 hover:bg-slate-100">Dashboard</a>
+          <a href="#captured" class="rounded-xl px-4 py-2 hover:bg-slate-100">Captured data</a>
+          <a href="#manual" class="rounded-xl px-4 py-2 hover:bg-slate-100">Manual telemetry</a>
+          <a href="#feature-usage" class="rounded-xl px-4 py-2 hover:bg-slate-100">Feature usage</a>
+          <a href="#storage" class="rounded-xl px-4 py-2 hover:bg-slate-100">Storage</a>
+          <a href="#security" class="rounded-xl px-4 py-2 hover:bg-slate-100">Security</a>
+          <a href="#health" class="rounded-xl px-4 py-2 hover:bg-slate-100">Health checks</a>
+          <a href="#alerts" class="rounded-xl px-4 py-2 hover:bg-slate-100">Alerts</a>
+          <a href="#ai" class="rounded-xl px-4 py-2 hover:bg-slate-100">AI assistant</a>
+          <a href="#architecture" class="rounded-xl px-4 py-2 hover:bg-slate-100">Architecture</a>
+          <a href="#sample" class="rounded-xl px-4 py-2 hover:bg-slate-100">Sample API</a>
+          <a href="#production" class="rounded-xl px-4 py-2 hover:bg-slate-100">Production</a>
+          <a href="#roadmap" class="rounded-xl px-4 py-2 hover:bg-slate-100">Roadmap</a>
+        </nav>
+      </aside>
+
+      <article class="grid min-w-0 gap-6">
+        <section id="highlights" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Highlights</h2>
+          <p class="mt-3 leading-7 text-slate-600">Designed for teams that want practical application insight without standing up a full observability stack on day one.</p>
+          <div class="mt-6 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Automatic ASP.NET Core request logging</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Secure built-in Razor Class Library dashboard</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Request detail drawer with headers, correlation IDs, trace IDs, exceptions, dependencies, and hierarchy</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Feature and module usage analytics</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Metrics for request volume, latency, percentiles, status codes, and error rate</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Manual logging, metrics, tracing, feature tracking, and dependency tracking APIs</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">Sensitive data redaction before storage, export, dashboard display, or AI context</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold text-slate-700">In-memory storage, JSON file storage, JSON and CSV export, SMTP alerts, and AI provider abstraction</p>
+          </div>
+        </section>
+
+        <section id="install" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Installation</h2>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">NuGet</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>dotnet add package Algos.Insights</code></pre>
+          </div>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Local development project reference</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>&lt;ProjectReference Include="..\src\Algos.Insights\Algos.Insights.csproj" /&gt;</code></pre>
+          </div>
+        </section>
+
+        <section id="quick-start" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Quick start</h2>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Program.cs</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>using Algos.Insights.Extensions;
+using Algos.Insights.Options;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAlgosInsights(options =>
+{
+    options.ApplicationName = "My Production API";
+    options.EnvironmentName = builder.Environment.EnvironmentName;
+
+    options.EnableAutomaticRequestLogging = true;
+    options.EnableRequestBodyLogging = false;
+    options.EnableResponseBodyLogging = false;
+    options.MaxBodySizeInBytes = 4096;
+
+    options.IgnoreRoutes = new[]
+    {
+        "/myinsights",
+        "/favicon.ico"
+    };
+
+    options.Storage.UseInMemory(memory =>
+    {
+        memory.MaxRequestLogs = 10000;
+        memory.MaxExceptionLogs = 5000;
+        memory.RetentionHours = 48;
+    });
+
+    options.Dashboard.Enabled = true;
+    options.Dashboard.Route = "/myinsights";
+    options.Dashboard.Title = "Algos Insights";
+    options.Dashboard.AuthMode = AlgosInsightsAuthMode.Basic;
+    options.Dashboard.Username = builder.Configuration["AlgosInsights:Username"];
+    options.Dashboard.Password = builder.Configuration["AlgosInsights:Password"];
+    options.Dashboard.EnableDataExport = true;
+});
+
+var app = builder.Build();
+
+app.UseAlgosInsights();
+
+app.MapAlgosInsightsDashboard("/myinsights", dashboard =>
+{
+    dashboard.RequireBasicAuth("admin", "strong-password");
+    dashboard.Title = "Algos Insights";
+});
+
+app.Run();</code></pre>
+          </div>
+          <p class="mt-4 rounded-2xl bg-teal-50 p-4 text-sm font-black text-teal-800">Open the dashboard at /myinsights.</p>
+        </section>
+
+        <section id="dashboard" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Dashboard</h2>
+          <p class="mt-3 leading-7 text-slate-600">The dashboard is delivered as a Razor Class Library area. Consuming applications do not need to copy views, JavaScript, or CSS files.</p>
+          <div class="mt-5 grid gap-5 lg:grid-cols-2">
+            <div class="rounded-2xl bg-slate-950 p-5 text-white">
+              <p class="text-xs font-black uppercase tracking-[.18em] text-slate-400">Routes</p>
+              <pre class="mt-4 overflow-x-auto text-sm leading-7 text-teal-100"><code>/myinsights
+/myinsights/requests
+/myinsights/features
+/myinsights/exceptions
+/myinsights/dependencies
+/myinsights/traces</code></pre>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-5">
+              <p class="text-xs font-black uppercase tracking-[.18em] text-slate-500">Capabilities</p>
+              <ul class="mt-4 grid gap-2 text-sm font-semibold text-slate-700">
+                <li>Overview health score and request explorer</li>
+                <li>Method, status, search, and sort controls</li>
+                <li>Trace ID and correlation ID copy buttons</li>
+                <li>Request hierarchy, modules, features, dependencies, exceptions</li>
+                <li>JSON and CSV exports</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-5 rounded-2xl border border-slate-200 p-4 text-sm font-semibold text-slate-700">The dashboard does not auto-poll. It loads once and refreshes when the user clicks Refresh.</p>
+        </section>
+
+        <section id="captured" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">What gets captured</h2>
+          <div class="mt-6 grid gap-3 md:grid-cols-3">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">HTTP method, path, query string, status code, duration</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Request size, response size, client IP, user agent</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Authenticated user name when available</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Trace ID, span ID, parent span ID, correlation ID</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Route name, controller/action, endpoint metadata</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Redacted request and response headers</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Optional request body</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Optional response body</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Exceptions, dependencies, traces, and feature usage</p>
+          </div>
+          <p class="mt-5 rounded-2xl bg-orange-50 p-4 text-sm font-black text-orange-800">Request and response body logging are disabled by default.</p>
+        </section>
+
+        <section id="manual" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Manual telemetry</h2>
+          <p class="mt-3 leading-7 text-slate-600">Inject IAlgosInsightsLogger to track scopes, feature usage, events, metrics, and dependency calls.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">PaymentService.cs</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>using Algos.Insights.Logging;
+
+public sealed class PaymentService
+{
+    private readonly IAlgosInsightsLogger _insights;
+
+    public PaymentService(IAlgosInsightsLogger insights)
+    {
+        _insights = insights;
+    }
+
+    public async Task ProcessPaymentAsync()
+    {
+        using var scope = _insights.BeginScope("PaymentProcessing", new
+        {
+            Module = "Payments",
+            Feature = "StripeCheckout"
+        });
+
+        _insights.TrackFeatureUsage("Payments", "StripeCheckout", new
+        {
+            PaymentType = "Card",
+            Currency = "USD"
+        });
+
+        _insights.TrackEvent("PaymentStarted", new
+        {
+            Amount = 100,
+            Currency = "USD"
+        });
+
+        _insights.TrackMetric("payment.amount", 100, new
+        {
+            Currency = "USD"
+        });
+
+        await _insights.TrackDependencyAsync("Stripe API", "CreatePaymentIntent", async () =>
+        {
+            await Task.Delay(120);
+        });
+    }
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="feature-usage" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Feature usage</h2>
+          <div class="mt-5 grid gap-5 lg:grid-cols-2">
+            <div class="overflow-hidden rounded-2xl bg-slate-950">
+              <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Manual tracking</div>
+              <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>_insights.TrackFeatureUsage("Billing", "Invoice Download");</code></pre>
+            </div>
+            <div class="overflow-hidden rounded-2xl bg-slate-950">
+              <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Endpoint metadata</div>
+              <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>using Algos.Insights.Models;
+
+app.MapPost("/api/payments/stripe", () => Results.Ok())
+   .WithMetadata(new AlgosFeatureAttribute("Payments", "Stripe Checkout"));</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="storage" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Storage and exports</h2>
+          <div class="mt-5 grid gap-5 lg:grid-cols-2">
+            <div class="overflow-hidden rounded-2xl bg-slate-950">
+              <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">In-memory storage</div>
+              <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>options.Storage.UseInMemory(memory =>
+{
+    memory.MaxRequestLogs = 10000;
+    memory.MaxExceptionLogs = 5000;
+    memory.RetentionHours = 48;
+});</code></pre>
+            </div>
+            <div class="overflow-hidden rounded-2xl bg-slate-950">
+              <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">JSON file storage</div>
+              <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>options.Storage.UseJsonFile(json =>
+{
+    json.DirectoryPath = "App_Data/AlgosInsights";
+});</code></pre>
+            </div>
+          </div>
+          <div class="mt-5 rounded-2xl border border-slate-200 p-5">
+            <p class="font-black">Protected export routes</p>
+            <pre class="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-5 text-sm leading-7 text-teal-100"><code>/myinsights/export/requests.json
+/myinsights/export/requests.csv</code></pre>
+            <p class="mt-3 text-sm font-semibold text-slate-600">Export output is limited by Dashboard.MaxExportRows.</p>
+          </div>
+        </section>
+
+        <section id="security" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Security</h2>
+          <p class="mt-3 leading-7 text-slate-600">Security defaults are intentionally conservative.</p>
+          <div class="mt-6 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Request body logging is off by default</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Response body logging is off by default</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Dashboard route is excluded from request logging</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Sensitive headers and fields are masked</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">AI is disabled by default</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Exports require dashboard authentication</p>
+          </div>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Default sensitive fields</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>password, token, authorization, cookie, set-cookie, otp, secret,
+access_token, refresh_token, card, cvv, api_key, connectionstring</code></pre>
+          </div>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Customize redaction</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>options.Redaction.MaskFields = new[]
+{
+    "password",
+    "token",
+    "authorization",
+    "cookie",
+    "secret",
+    "api_key"
+};</code></pre>
+          </div>
+        </section>
+
+        <section id="health" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Health checks</h2>
+          <p class="mt-3 leading-7 text-slate-600">/health is ignored by default because most production systems call health endpoints very frequently.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Log health checks by overriding IgnoreRoutes</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>options.IgnoreRoutes = new[]
+{
+    "/myinsights",
+    "/favicon.ico"
+};</code></pre>
+          </div>
+        </section>
+
+        <section id="alerts" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Alerts</h2>
+          <p class="mt-3 leading-7 text-slate-600">Configure SMTP alert rules with windows, thresholds, cooldowns, and email delivery.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">SMTP and repeated 500 errors</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>options.EmailAlerts.ConfigureSmtp(smtp =>
+{
+    smtp.Enabled = true;
+    smtp.Host = builder.Configuration["Smtp:Host"];
+    smtp.Port = 587;
+    smtp.Username = builder.Configuration["Smtp:Username"];
+    smtp.Password = builder.Configuration["Smtp:Password"];
+    smtp.From = "alerts@myapp.com";
+    smtp.To = new[] { "admin@myapp.com" };
+});
+
+options.Alerts.AddRule(rule =>
+{
+    rule.Name = "Repeated 500 Errors";
+    rule.WhenStatusCodeIs = 500;
+    rule.TriggerWhenCountGreaterThan = 10;
+    rule.WindowMinutes = 5;
+    rule.CooldownMinutes = 20;
+    rule.SendEmail = true;
+});</code></pre>
+          </div>
+        </section>
+
+        <section id="ai" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">AI assistant</h2>
+          <p class="mt-3 leading-7 text-slate-600">AI is disabled by default. The package currently exposes an AI provider abstraction for future integrations. AI context must be redacted before use, and API keys are never displayed in the dashboard.</p>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Provider abstraction</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>public interface IAlgosAiProvider
+{
+    Task&lt;AlgosAiResponse&gt; AskAsync(
+        AlgosAiRequest request,
+        CancellationToken cancellationToken = default);
+}</code></pre>
+          </div>
+          <div class="mt-5 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">OpenAI-compatible APIs</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Azure OpenAI</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Custom HTTP endpoints</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Local LLM endpoints</p>
+          </div>
+        </section>
+
+        <section id="architecture" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Architecture</h2>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Repository layout</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>src/
+  Algos.Insights/
+    Areas/
+      AlgosInsights/
+        Pages/
+          Index.cshtml
+          Requests.cshtml
+          Features.cshtml
+          Exceptions.cshtml
+          Dependencies.cshtml
+          Traces.cshtml
+    Dashboard/
+      Assets/
+      Endpoints/
+      Security/
+    Middleware/
+    Models/
+    Options/
+    Logging/
+    Storage/
+    Export/
+    Alerts/
+    AI/
+    Redaction/
+
+samples/
+  Algos.Insights.SampleApi/</code></pre>
+          </div>
+        </section>
+
+        <section id="sample" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Sample API</h2>
+          <div class="mt-5 overflow-hidden rounded-2xl bg-slate-950">
+            <div class="border-b border-white/10 px-5 py-3 text-xs font-black uppercase tracking-[.18em] text-slate-400">Run sample</div>
+            <pre class="overflow-x-auto p-5 text-sm leading-7 text-teal-100"><code>dotnet run --project samples/Algos.Insights.SampleApi/Algos.Insights.SampleApi.csproj</code></pre>
+          </div>
+          <div class="mt-5 grid gap-3 md:grid-cols-3">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Open: /myinsights</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Username: admin</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Password: strong-password</p>
+          </div>
+        </section>
+
+        <section id="production" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Production recommendations</h2>
+          <div class="mt-6 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Use strong dashboard credentials</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Serve the dashboard only over HTTPS</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Keep body logging disabled unless diagnosing a specific issue</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Keep retention bounded</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Exclude noisy routes unless you really need them</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Disable exports in sensitive environments if required</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Store dashboard credentials in configuration or secret storage</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Treat AI output as advisory only</p>
+          </div>
+        </section>
+
+        <section id="roadmap" class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h2 class="text-3xl font-black">Roadmap</h2>
+          <div class="mt-6 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">OpenTelemetry exporter integration</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Azure Application Insights and Azure Monitor providers</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">AWS CloudWatch provider</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">SQL Server, PostgreSQL, SQLite, MongoDB storage providers</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Elasticsearch/OpenSearch provider</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Rich trace waterfall UI</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Alert history dashboard</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Webhook, Slack, and Teams alert providers</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">AI chat provider implementations</p>
+            <p class="rounded-2xl bg-slate-50 p-4 text-sm font-semibold">Role/policy-based dashboard authorization</p>
+          </div>
+        </section>
+
+        <section id="links" class="grid gap-4 md:grid-cols-3">
+          <a href="https://www.nuget.org/packages/Algos.Insights/2.1.7" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-teal-300">
+            <p class="text-sm font-black text-teal-700">NuGet</p>
+            <h2 class="mt-2 text-xl font-black">Algos.Insights</h2>
+          </a>
+          <a href="https://github.com/rajguptaH/Algos.Insights" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-orange-300">
+            <p class="text-sm font-black text-orange-700">Source</p>
+            <h2 class="mt-2 text-xl font-black">GitHub repository</h2>
+          </a>
+          <a href="mailto:rajnarayan.guptanet@gmail.com" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-slate-400">
+            <p class="text-sm font-black text-slate-600">Email</p>
+            <h2 class="mt-2 text-xl font-black">Contact author</h2>
+          </a>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8">
+    <div class="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-5 text-sm font-semibold text-slate-500 sm:flex-row lg:px-8">
+      <p>Made with Love In India</p>
+      <p><a href="index.html" class="hover:text-slate-950">Home</a> | <a href="work.html" class="hover:text-slate-950">Work</a> | <a href="https://www.instagram.com/raj__rr/" class="hover:text-slate-950">Instagram</a> | <a href="contact.html" class="hover:text-slate-950">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>
